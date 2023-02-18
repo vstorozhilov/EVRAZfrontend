@@ -16,7 +16,7 @@ function App() {
       }}>
         <Header/>
         <Routes>
-            <Route path='/main' element={<Main/>}/>
+            <Route path='/' element={<Main/>}/>
             <Route path='/mnemoschema' element={<Mnemoschema/>}/>
         </Routes>
         {/* <Main/> */}
