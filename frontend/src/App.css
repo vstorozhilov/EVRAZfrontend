@@ -26,3 +26,8 @@ body {
   min-height: 54px;
 }
 
+#chart {
+  background-color: white;
+  border-radius: 10px;
+}
+

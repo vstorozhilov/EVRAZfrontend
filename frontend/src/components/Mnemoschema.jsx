@@ -8,8 +8,13 @@ import Scale from './Scale';
 import Label from './Label';
 import ScaleField from './ScaleField';
 import Flap from './Flap';
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
 export default function Mnemoschema() {
+
+    const navigate = useNavigate();
+
     return <main style={{
         position: 'relative',
         height: '855px',
@@ -125,6 +130,15 @@ export default function Mnemoschema() {
                     </div>
                     <Label top={300} left={1320}/>
                     <Flap/>
+                    <Button variant="outlined" sx={{
+                        position: 'absolute',
+                        top: '100px',
+                        right: '100px',
+                        color: 'black',
+                        borderColor: '#FAB82E'
+                    }}
+                   onClick={()=>navigate('/charts')}
+                    >График</Button >
                 </div>
             </div>
         </div>
