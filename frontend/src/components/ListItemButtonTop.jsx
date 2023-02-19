@@ -20,7 +20,12 @@ export default function ListItemButtonTop(props) {
             </ListItemButton>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 {props.top_credentials.map((item, index)=>(
-                    <ListItemButtonNested key={index} credentials={item.credentials} top_text={item.top_text}/>
+                    <ListItemButtonNested
+                    lastMessage={props.lastMessage}
+                    signalsOfSelectedExhauster={props.signalsOfSelectedExhauster}
+                    key={index}
+                    credentials={item.credentials}
+                    top_text={item.top_text}/>
                 ))}
             </Collapse>
         </>

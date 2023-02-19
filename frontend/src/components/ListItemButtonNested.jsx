@@ -22,11 +22,15 @@ export default function ListItemButtonNested(props) {
             {props.credentials.map(
                 (item, index)=>(
                     <ListItemSensor
+                        signalsOfSelectedExhauster={props.signalsOfSelectedExhauster}
+                        lastMessage={props.lastMessage}
                         key={index}
                         text={item[0]}
                         value={item[1]}
                         sensor={item[2]}
                         setSensor={item[3]}
+                        index={item[4]}
+                        hasAlarm={item[5]}
                     />
                 )
             )}

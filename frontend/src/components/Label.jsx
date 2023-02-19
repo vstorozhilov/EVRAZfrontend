@@ -11,6 +11,6 @@ export default function Label(props) {
         color: 'white',
         borderRadius: '5px'
     }}>
-        000
+        {props.value.toFixed(2)}
     </div>
 }

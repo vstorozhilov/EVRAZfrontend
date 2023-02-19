@@ -55,9 +55,9 @@ export default function Main() {
                     borderRadius : '5px',
                     backgroundColor: 'white'
                 }}>
-                    <SinteringMachine/>
-                    <SinteringMachine/>
-                    <SinteringMachine/>
+                    <SinteringMachine exhausters={[0, 1]}/>
+                    <SinteringMachine exhausters={[2, 3]}/>
+                    <SinteringMachine exhausters={[4, 5]}/>
                 </div>
             </div>
         </div>

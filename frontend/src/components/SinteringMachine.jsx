@@ -2,7 +2,7 @@ import { display } from "@mui/system";
 import RecipeReviewCard from "./Exhauster";
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-export default function SinteringMachine() {
+export default function SinteringMachine(props) {
     const matches = useMediaQuery('(min-width:1660px)');
     return (
         <div style={{
@@ -24,8 +24,8 @@ export default function SinteringMachine() {
                     display : 'flex',
                     marginTop : '10px'
                 }}>
-                    <RecipeReviewCard/>
-                    <RecipeReviewCard/>
+                    <RecipeReviewCard exhauster={props.exhausters[0]}/>
+                    <RecipeReviewCard exhauster={props.exhausters[1]}/>
             </div>
         </div>
         )

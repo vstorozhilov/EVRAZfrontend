@@ -9,6 +9,7 @@ import Exh from './Exhauster.png'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import NestedList from './NestedList';
 import { useNavigate } from 'react-router-dom';
+import {signalsPerExhauster} from './signalMap.js';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -21,7 +22,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard(props) {
   const [expanded, setExpanded] = React.useState(false);
   const navigate = useNavigate();
 
@@ -49,7 +50,11 @@ export default function RecipeReviewCard() {
           </div>
         }
         action={
-          <IconButton onClick={() => navigate("/mnemoschema")} sx={{
+          <IconButton onClick={() => {
+            window.signalsOfSelectedExhauster = signalsPerExhauster[parseInt(props.exhauster)];
+            navigate("/mnemoschema");
+          }
+          } sx={{
             borderRadius: '5px',
             backgroundColor: 'white',
             height: '30px',

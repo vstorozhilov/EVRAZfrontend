@@ -14,10 +14,11 @@ import SensorsIcon from '@mui/icons-material/Sensors';
 import OpacityIcon from '@mui/icons-material/Opacity';
 
 export default function NestedList() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
+  const [open2, set2Open] = React.useState(false);
 
-  const handleClick = () => {
-    setOpen(!open);
+  const handleClick = (state, setState) => {
+    setState(!state);
   };
 
   return (
@@ -26,7 +27,7 @@ export default function NestedList() {
       component="nav"
       aria-labelledby="nested-list-subheader"
     >
-      <ListItemButton sx={{ pl: 0 }} onClick={handleClick}>
+      <ListItemButton sx={{ pl: 0 }} onClick={()=>handleClick(open, setOpen)}>
         <ListItemIcon>
           <WarningIcon sx={{
             color : 'yellow'
@@ -53,14 +54,14 @@ export default function NestedList() {
             </ListItem>
         </List>
       </Collapse>
-      <ListItemButton sx={{ pl: 0 }} onClick={handleClick}>
+      <ListItemButton sx={{ pl: 0 }} onClick={()=>handleClick(open2, set2Open)}>
         <ListItemIcon>
           <EngineeringIcon/>
         </ListItemIcon>
         <ListItemText sx={{ml : '-15px'}} primary="Все подшипники" />
-        {open ? <ExpandLess/> : <ExpandMore/>}
+        {open2 ? <ExpandLess/> : <ExpandMore/>}
       </ListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Collapse in={open2} timeout="auto" unmountOnExit>
         <List component="div">
         <ListItem sx={{
                 backgroundColor: '#fafafa',
